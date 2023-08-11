@@ -111,4 +111,14 @@ public partial class HomePage : ContentPage
     {
 
     }
+
+    private void stock_management_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void shipment_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -65,6 +65,7 @@
 	  <None Remove="Resources\Images\eleave.png" />
 	  <None Remove="Resources\Images\expenses.png" />
 	  <None Remove="Resources\Images\ezpenseclaim.png" />
+	  <None Remove="Resources\Images\fixed_assets.png" />
 	  <None Remove="Resources\Images\invoices.png" />
 	  <None Remove="Resources\Images\journalentries.png" />
 	  <None Remove="Resources\Images\openbalance.png" />
@@ -74,6 +75,8 @@
 	  <None Remove="Resources\Images\profitandloss.png" />
 	  <None Remove="Resources\Images\purchase_orders.png" />
 	  <None Remove="Resources\Images\quotation.png" />
+	  <None Remove="Resources\Images\shipment_tracking.png" />
+	  <None Remove="Resources\Images\stock_management.png" />
 	  <None Remove="Resources\Images\trial_balance.png" />
 	  <None Remove="Resources\Images\warehouse.png" />
 	</ItemGroup>

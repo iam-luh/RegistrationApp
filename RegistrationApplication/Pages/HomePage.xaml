@@ -481,7 +481,83 @@
                     
                     
                 </VerticalStackLayout>
+            <!--This is the beginning of the Apps Sector which contains the header-->
+
+            <VerticalStackLayout Margin="0,20,0,0" >
+                <Label x:Name="appheading" 
+               Text="Apps"
+               FontSize="{DynamicResource hfontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource tcolor}"/>
+                <Label x:Name="appIntroduction" 
+               Text="Explore apps in VisualApps for additional functions"
+               FontSize="{DynamicResource fontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource pcolor}"/>
+
+                <!--This is the only line of images in Apps sector-->
+                <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,15,0,0"
+                    >
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="stock_management" 
+                         Source="stock_management.png" 
+                         Clicked="stock_management_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Stock" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                        <Label Text="Management" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="shipment" 
+                         Source="shipment_tracking.png" 
+                         Clicked="shipment_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Shipment" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                        <Label Text="Tracking" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="fixedassets" 
+                         Source="fixed_assets.png" 
+                         Clicked="profit_loss_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Fixed" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                        <Label Text="Assets" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+
+                </FlexLayout>
+
+
+
+
             </VerticalStackLayout>
+        </VerticalStackLayout>
             
             
         </ScrollView>
