@@ -51,6 +51,31 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\TangoSans.ttf" />
 	  <None Remove="Resources\Fonts\TangoSans_Bold.ttf" />
+	  <None Remove="Resources\Images\accounts.png" />
+	  <None Remove="Resources\Images\balance_sheet.png" />
+	  <None Remove="Resources\Images\bills.png" />
+	  <None Remove="Resources\Images\chartaccounts.png" />
+	  <None Remove="Resources\Images\contacts.png" />
+	  <None Remove="Resources\Images\crm.png" />
+	  <None Remove="Resources\Images\crmimage.png" />
+	  <None Remove="Resources\Images\debitnotes.png" />
+	  <None Remove="Resources\Images\deposits.png" />
+	  <None Remove="Resources\Images\document_designer.png" />
+	  <None Remove="Resources\Images\document_scanner.png" />
+	  <None Remove="Resources\Images\eleave.png" />
+	  <None Remove="Resources\Images\expenses.png" />
+	  <None Remove="Resources\Images\ezpenseclaim.png" />
+	  <None Remove="Resources\Images\invoices.png" />
+	  <None Remove="Resources\Images\journalentries.png" />
+	  <None Remove="Resources\Images\openbalance.png" />
+	  <None Remove="Resources\Images\payroll.png" />
+	  <None Remove="Resources\Images\pick.png" />
+	  <None Remove="Resources\Images\products.png" />
+	  <None Remove="Resources\Images\profitandloss.png" />
+	  <None Remove="Resources\Images\purchase_orders.png" />
+	  <None Remove="Resources\Images\quotation.png" />
+	  <None Remove="Resources\Images\trial_balance.png" />
+	  <None Remove="Resources\Images\warehouse.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -59,6 +84,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\CreateInvoicePage.xaml.cs">
+	    <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\HomePage.xaml.cs">
+	    <DependentUpon>HomePage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\CreateInvoicePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

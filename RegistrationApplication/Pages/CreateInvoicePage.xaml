@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistrationApplication.Pages.CreateInvoicePage"
+             Title="CreateInvoicePage"
+             Shell.NavBarIsVisible="False"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="bgcolor">#F9F9F9</Color>
+            <Color x:Key="btncolor">#7F55DA</Color>
+            <Color x:Key="scolor">#C0C0C0</Color>
+            <Color x:Key="tcolor">#000000</Color>
+            <Color x:Key="thcolor">#7a7f8b</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView >
+        <VerticalStackLayout Padding="15" Spacing="20">
+            <HorizontalStackLayout >
+                <Label x:Name="lblTitle" Text="Create New Invoice" FontAttributes="Bold" FontSize="21" TextColor="Black"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="15">
+                <Label x:Name="lblTranscation" Text="Invoice" TextColor="Black" FontAttributes="Bold" FontSize="17"/>
+                <Label x:Name="InvoiceNumber" 
+                       Text="#8FB28438-0001" 
+                       FontAttributes="Bold" 
+                       TextColor="DeepSkyBlue" FontSize="19"/>
+            </HorizontalStackLayout>
+            
+            <!--This contains the box and the the recipient label words and the entry and border-->
+            <Border StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    BackgroundColor="#F9F9F9"
+                    Stroke="#C0C0C0"
+                    HeightRequest="120"
+                    Padding="10,15"
+                    Margin="0,-15,0,0">
+                <Label x:Name="lblRecepient" 
+                   Text="Recipient Email" 
+                   TextColor="Black" 
+                   FontAttributes="Bold" 
+                   FontSize="14"/>
+            </Border>
+            <Border x:Name="emailentry"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5"
+                    BackgroundColor="#F9F9F9"
+                    Stroke="#C0C0C0"
+                    HeightRequest="45"
+                    WidthRequest="250"
+                    HorizontalOptions="Start"
+                    Padding="10,0"
+                    Margin="20,-95,0,0">
+                <Entry x:Name="entryemail"
+                       Placeholder="lusungugodwin@gmail.com"
+                       PlaceholderColor="#7a7f8b"
+                       WidthRequest="200"
+                       Text="Lusungu"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       IsSpellCheckEnabled="False"
+                       HorizontalOptions="StartAndExpand"
+                       />
+            </Border>
+            
+            <!--This is the part which contains the Project Description and the border and the entry-->
+            <Label x:Name="lblProject"
+                   Text="Project Description"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="10,20,0,0"/>
+            <Border x:Name="borderproject"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5"
+                    BackgroundColor="#F9F9F9"
+                    Stroke="#C0C0C0"
+                    HeightRequest="45"
+                    Padding="10,0"
+                    Margin="5,-15,0,0">
+                <Entry x:Name="entryproject"
+                       Placeholder="lusungugodwin@gmail.com"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                       />
+            </Border>
+            
+            <!--This is a grid which contains two vertical stacklayouts which are arranged horizontally--> 
+            <Grid x:Name="dates_grid"
+                  Margin="0,-10,0,0"
+                  ColumnSpacing="15"
+                  RowDefinitions="*"
+                  ColumnDefinitions="*,*">
+            <!--This is a container which contains the Issued On date and the entry and the border-->
+                <VerticalStackLayout Grid.Row="0" 
+                        Grid.Column="0">
+                    <Label x:Name="Issued_On"
+                   Text="Issued On"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="10,0,0,0"/>
+                    <Border 
+                    x:Name="IssuedOn"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5"
+                    BackgroundColor="#F9F9F9"
+                    Stroke="#C0C0C0"
+                    HeightRequest="40"
+                    Padding="10,10"
+                    Margin="5,5,0,0">
+                        <Label x:Name="entryIssuedonDate"
+                               Text="24/04/2023"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                       />
+                    </Border>
+                </VerticalStackLayout>
+
+        <!--This is a container which contains the Due On date and the entry and the border-->
+                <VerticalStackLayout Grid.Row="0" 
+                                     Grid.Column="1">
+                    <Label x:Name="Due_On"
+                   Text="Due On"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="10,0,0,0"/>
+                    <Border 
+                    x:Name="Dueon"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5"
+                    BackgroundColor="#F9F9F9"
+                    Stroke="#C0C0C0"
+                    HeightRequest="40"
+                    Padding="10,10"
+                    Margin="5,5,0,0">
+                        <Label x:Name="entryDueonDate"
+                               Text="24/04/2023"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                       />
+                    </Border>
+                </VerticalStackLayout>
+            </Grid>
+
+            <!--This is the part which contains the Bill From Address and the border and the entry-->
+            <Label x:Name="lblBillFrom"
+                   Text="Bill From"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="10,-5,0,0"/>
+            <Border x:Name="borderBillFrom"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5"
+                    BackgroundColor="#F9F9F9"
+                    Stroke="#C0C0C0"
+                    HeightRequest="45"
+                    Padding="10,0"
+                    Margin="5,-15,0,0">
+                <Entry x:Name="entryBillFrom"
+                       Placeholder="Dar-es-salaam,Tanzania Mbezi Mwisho"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                       />
+            </Border>
+
+            <!--This is the part which contains the Bill To Address and the border and the entry-->
+            <Label x:Name="lblBillTo"
+                   Text="Bill To"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="10,-5,0,0"/>
+            <Border x:Name="borderBillTo"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5"
+                    BackgroundColor="#F9F9F9"
+                    Stroke="#C0C0C0"
+                    HeightRequest="45"
+                    Padding="10,0"
+                    Margin="5,-15,0,0">
+                <Entry x:Name="entryBillTo"
+                       Placeholder="Nairobi,Kenya Kisumu State near Malindi"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                       />
+            </Border>
+            <!--This is the part which contains the CheckBox and the label-->
+            <HorizontalStackLayout Margin="0,-10,0,0"  Spacing="10">
+                <CheckBox x:Name="checkboxrecurring"  
+                          CheckedChanged="checkboxrecurring_CheckedChanged"
+                          Color="#7F55DA"
+                          BackgroundColor="Transparent"
+                          Margin="10,-12,0,0"
+                          />
+                <Label x:Name="lblRecurring" 
+                       Text="This is a recurring invoice(Monthly)"
+                        />
+            </HorizontalStackLayout>
+            <Label x:Name="lblInvoice_text" 
+                   Text="Invoice Items"
+                   TextColor="Black"
+                   FontFamily="OpenSansSemibold"
+                   FontAttributes="Bold"
+                   FontSize="17"
+                   Margin="5,-15,0,0"/>
+            
+                       <!--Items in a Grid form-->
+            <Grid RowDefinitions="2*,3*,3*"
+                  ColumnDefinitions="5*,2*,1.5*,2.4*"
+                  ColumnSpacing="15"
+                  RowSpacing="10"
+                  Margin="0,0,0,0"
+                  >
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                   x:Name="lblItem_Text"
+                   Text="Item"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="10,-5,0,0"
+                   
+                   />
+                <Label Grid.Row="0"
+                       Grid.Column="1"
+                   x:Name="lblPrice_Text"
+                   Text="Price"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="0,-5,0,0"
+                   />
+                <Label Grid.Row="0"
+                       Grid.Column="2"
+                   x:Name="lblOty_Text"
+                   Text="Qty"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="0,-5,0,0"
+                   />
+                <Label Grid.Row="0"
+                       Grid.Column="3"
+                   x:Name="lblTotalPrice_Text"
+                   Text="TotalPrice"
+                   TextColor="#7a7f8b"
+                   FontSize="13"
+                   FontAttributes="Bold"
+                   Margin="0,-5,0,0"/>
+
+                <!--This is the first Box in the First Item-->
+            <Border     Grid.Row="1"
+                        Grid.Column="0"
+                        x:Name="borderItem_1"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="40"
+                        Padding="0,0"
+                        Margin="0,0,0,0">
+                
+            <Entry x:Name="entryitem_name"
+                       Placeholder="Item Name"
+                       Text="Legal Advising"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+            </Border>
+             <!--This is the Second Box in the First Item-->
+            <Border     Grid.Row="1"
+                        Grid.Column="1"
+                        x:Name="borderItem_1price"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="40"
+                        Padding="0,0"
+                        Margin="0,0,0,0">
+
+            <Entry x:Name="entryitem_PRICE"
+                       Placeholder="Item Name"
+                       Text="1000"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+            </Border>
+            <!--This is the Third Box in the first Item-->
+            <Border     Grid.Row="1"
+                        Grid.Column="2"
+                        x:Name="borderItem_1Qty"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="40"
+                        Padding="0,0"
+                        Margin="0,0,0,0">
+
+            <Entry x:Name="entryitem1_Qty"
+                       Placeholder="Item Name"
+                       Text="1000"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+            </Border>
+                <!--This is the Fourth Box in the first Item-->
+                <Border     Grid.Row="1"
+                        Grid.Column="3"
+                        x:Name="borderItem_1TotalPrice"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="40"
+                        Padding="0,0"
+                        Margin="0,0,0,0">
+
+                    <Entry x:Name="entryitem1_TotalPrice"
+                       Placeholder="Item Name"
+                       Text="10000"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+                </Border>
+                <!--This is the first Box in the Second Item-->
+                <Border     Grid.Row="2"
+                        Grid.Column="0"
+                        x:Name="borderItem_2"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="40"
+                        Padding="0,0"
+                        Margin="0,0,0,0">
+
+                    <Entry x:Name="entryitem_name2"
+                       Placeholder="Item Name"
+                       Text="Expert Counselling"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+                </Border>
+                <!--This is the Second Box in the Second Item-->
+                <Border     Grid.Row="2"
+                        Grid.Column="1"
+                        x:Name="borderItem_2price"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="40"
+                        Padding="0,0"
+                        Margin="0,0,0,0">
+
+                    <Entry x:Name="entryitem_2PRICE"
+                       Placeholder="Item Name"
+                       Text="1000"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+                </Border>
+                <!--This is the Third Box in the Second Item-->
+                <Border     Grid.Row="2"
+                        Grid.Column="2"
+                        x:Name="borderItem_2Qty"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="40"
+                        Padding="0,0"
+                        Margin="0,0,0,0">
+
+                    <Entry x:Name="entryitem2_Qty"
+                       Placeholder="Item Name"
+                       Text="1000"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+                </Border>
+                <!--This is the Fourth Box in the Second Item-->
+                <Border     Grid.Row="2"
+                        Grid.Column="3"
+                        x:Name="borderItem_2TotalPrice"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="40"
+                        Padding="0,0"
+                        Margin="0,0,0,0">
+
+                    <Entry x:Name="entryitem2_TotalPrice"
+                       Placeholder="Item Name"
+                       Text="10000"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+                </Border>
+            </Grid>
+            <!--THIS IS THE PART WITH THE ADD ITEM CONTROLS--> 
+            <HorizontalStackLayout>
+                <!--<Label x:Name="lblplus"
+                       Text="+"
+                       TextColor="#7F55DA"
+                       FontAttributes="Bold"
+                       FontSize="15"
+                       FontFamily="OpenSansSemibold"
+                       />-->
+                <Label x:Name="lbladdItem"
+                       Text="+ Add Item"
+                       TextColor="#7F55DA"
+                       FontAttributes="Bold"
+                       FontFamily="OpenSansSemibold"
+                       
+                       />
+                <Label x:Name="lbltotalamount"
+                       Text="Total Amount"
+                       TextColor="#7a7f8b"
+                       FontAttributes="Bold"
+                       FontFamily="OpenSansSemibold"
+                       Margin="70,0,0,0"
+                       />
+                <Label x:Name="lblmoneyinnumbers"
+                       Text="$1400"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontFamily="OpenSansSemibold"
+                       Margin="40,0,0,0"
+                       />
+            </HorizontalStackLayout>
+            <Label     x:Name="lbl_Additional_Notes"
+                       Text="Additional Notes"
+                       TextColor="#7a7f8b"
+                       FontAttributes="Bold"
+                       FontFamily="OpenSansSemibold"
+                       Margin="10,0,0,0"
+                       />
+            <Border     Grid.Row="2"
+                        Grid.Column="3"
+                        x:Name="borderItem_additionalNotes"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        BackgroundColor="#F9F9F9"
+                        Stroke="#C0C0C0"
+                        HeightRequest="90"
+                        Padding="0,0"
+                        Margin="0,-10,0,0">
+
+                <Entry x:Name="entryitem_additionalNotes"
+                       Placeholder="Item Name"
+                       Text="This is my payment Request"
+                       TextColor="Black"
+                       PlaceholderColor="Black"
+                       FontAttributes="Bold"
+                      />
+            </Border>
+            <HorizontalStackLayout HorizontalOptions="End" 
+                                   Spacing="10"
+                                   Margin="0,20,0,0">
+                <Button x:Name="btndraft"  
+                        Text="Save as Draft" 
+                        BackgroundColor="Transparent"
+                        FontAttributes="Bold"
+                        FontFamily="OpenSansSemibold"
+                        BorderColor="#7a7f8b"
+                        BorderWidth="3"
+                        TextColor="Black"
+                        Clicked="btndraft_Clicked"
+                         />
+                <Button x:Name="btnSend"
+                        Text="Send" 
+                        BackgroundColor="#7F55DA"
+                        FontAttributes="Bold"
+                        FontFamily="OpenSansSemibold"
+                        BorderColor="#7a7f8b"
+                        TextColor="White"
+                        Clicked="btnSend_Clicked"
+                        WidthRequest="90"
+                        />
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+        
+
+
+    </ScrollView>
+
+</ContentPage>
