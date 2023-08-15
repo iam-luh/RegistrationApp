@@ -5,8 +5,10 @@ public partial class HomePage : ContentPage
 	public HomePage()
 	{
 		InitializeComponent();
+        
 	}
 
+   
     private async void quotation_Clicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(CreateInvoicePage));
@@ -118,6 +120,26 @@ public partial class HomePage : ContentPage
     }
 
     private void shipment_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void org_Info_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Users_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Settings_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Subscriptions_Clicked(object sender, EventArgs e)
     {
 
     }

@@ -52,6 +52,7 @@
 	  <None Remove="Resources\Fonts\TangoSans.ttf" />
 	  <None Remove="Resources\Fonts\TangoSans_Bold.ttf" />
 	  <None Remove="Resources\Images\accounts.png" />
+	  <None Remove="Resources\Images\allusers.png" />
 	  <None Remove="Resources\Images\balance_sheet.png" />
 	  <None Remove="Resources\Images\bills.png" />
 	  <None Remove="Resources\Images\chartaccounts.png" />
@@ -69,15 +70,19 @@
 	  <None Remove="Resources\Images\invoices.png" />
 	  <None Remove="Resources\Images\journalentries.png" />
 	  <None Remove="Resources\Images\openbalance.png" />
+	  <None Remove="Resources\Images\orginfo.png" />
 	  <None Remove="Resources\Images\payroll.png" />
 	  <None Remove="Resources\Images\pick.png" />
 	  <None Remove="Resources\Images\products.png" />
 	  <None Remove="Resources\Images\profitandloss.png" />
 	  <None Remove="Resources\Images\purchase_orders.png" />
 	  <None Remove="Resources\Images\quotation.png" />
+	  <None Remove="Resources\Images\settings.png" />
 	  <None Remove="Resources\Images\shipment_tracking.png" />
 	  <None Remove="Resources\Images\stock_management.png" />
+	  <None Remove="Resources\Images\subscriptions.png" />
 	  <None Remove="Resources\Images\trial_balance.png" />
+	  <None Remove="Resources\Images\users.png" />
 	  <None Remove="Resources\Images\warehouse.png" />
 	</ItemGroup>
 
@@ -102,6 +107,10 @@
 	  <MauiXaml Update="Pages\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Pages\Controls\" />
 	</ItemGroup>
 
 </Project>

@@ -107,14 +107,15 @@
                     BackgroundColor="#F9F9F9"
                     Stroke="#C0C0C0"
                     HeightRequest="40"
-                    Padding="10,10"
+                    Padding="0,0"
                     Margin="5,5,0,0">
-                        <Label x:Name="entryIssuedonDate"
-                               Text="24/04/2023"
-                               FontSize="12"
-                               FontAttributes="Bold"
-                       />
+                        <DatePicker 
+                                    TextColor="Black"
+                                    HorizontalOptions="CenterAndExpand"
+                                    FontAttributes="Bold"
+                        Date="06/12/2021"/>
                     </Border>
+
                 </VerticalStackLayout>
 
         <!--This is a container which contains the Due On date and the entry and the border-->
@@ -133,14 +134,15 @@
                     BackgroundColor="#F9F9F9"
                     Stroke="#C0C0C0"
                     HeightRequest="40"
-                    Padding="10,10"
+                    Padding="10,0"
                     Margin="5,5,0,0">
-                        <Label x:Name="entryDueonDate"
-                               Text="24/04/2023"
-                               FontSize="12"
-                               FontAttributes="Bold"
-                       />
+                        <DatePicker 
+                                    TextColor="Black"
+                                    HorizontalOptions="CenterAndExpand"
+                                    FontAttributes="Bold"
+                                     Date="06/12/2021"/>
                     </Border>
+                    
                 </VerticalStackLayout>
             </Grid>
 
