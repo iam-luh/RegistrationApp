@@ -24,7 +24,11 @@ public partial class CreateInvoicePage : ContentPage
 
     private async void btndraft_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync(nameof(InvoiceListPage));
+    }
+
+    private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+    {
 
     }
 }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistrationApplication.Pages.InvoiceListPage"
+             xmlns:viewmodel="clr-namespace:RegistrationApplication.ViewModels"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Mvvm.ComponentModel;assembly=CommunityToolkit.Mvvm"
+             Title="InvoiceListPage">
+    <ContentPage.BindingContext>
+        <viewmodel:InvoicesViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid BackgroundColor="#f9f9f9" RowDefinitions="*">
+        
+        <CollectionView ItemsSource="{Binding invoices}"
+                        IsGrouped="True" 
+                        Margin="0,10,0,0"
+                        WidthRequest="290"
+                        >
+            
+            
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Name}"
+                           Margin="0,0,0,0"
+                           FontAttributes="Bold"
+                           FontSize="19"/>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+
+            <CollectionView.GroupFooterTemplate>
+                <DataTemplate>
+                    <Label 
+                           Margin="0,0,0,0"
+                           FontAttributes="Bold"
+                           FontSize="19"/>
+                </DataTemplate>
+            </CollectionView.GroupFooterTemplate>
+            <CollectionView.ItemTemplate >
+                <DataTemplate>
+
+                        <Grid RowDefinitions="*,*"
+                          ColumnDefinitions="250,200"
+                          >
+                            <Label  Text="{Binding Invoicetype}"/>
+                            <Label Grid.Row="1" Margin="0,0,0,0" Text="{Binding Invoicebrief}"/>
+                            <Label Grid.Column="1" Grid.RowSpan="2" Text="{Binding Price}" VerticalOptions="Center"/>
+                        </Grid>
+                   
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        
+        </CollectionView>
+
+        <Button x:Name="btnadd"
+                Grid.Row="0" 
+                HeightRequest="60" 
+                WidthRequest="60" 
+                Text="+"  
+                FontAttributes="Bold"
+                FontSize="30"
+                CornerRadius="60" 
+                Command="{Binding AddInvoiceCommand}"
+                Margin="0,270,0,0"/>
+       
+
+    </Grid>
+
+
+</ContentPage>
