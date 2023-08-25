@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"             
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistrationApplication.Pages.InvoiceListPage"
-             xmlns:viewmodel="clr-namespace:RegistrationApplication.ViewModels"
+             xmlns:viewmodel="clr-namespace:RegistrationApplication.ViewModels"          
+             xmlns:data="clr-namespace:Syncfusion.Maui.DataSource;assembly=Syncfusion.Maui.DataSource" 
              xmlns:toolkit="clr-namespace:CommunityToolkit.Mvvm.ComponentModel;assembly=CommunityToolkit.Mvvm"
              Title="InvoiceListPage">
     <ContentPage.BindingContext>
         <viewmodel:InvoicesViewModel/>
     </ContentPage.BindingContext>
 
-    <Grid BackgroundColor="#f9f9f9" RowDefinitions="*">
-        
-        <CollectionView ItemsSource="{Binding invoices}"
+    <Grid BackgroundColor="#f9f9f9" RowDefinitions="*" 
+          Padding="20">
+
+        <!--<CollectionView ItemsSource="{Binding invoices}"
                         IsGrouped="True" 
                         Margin="0,10,0,0"
                         WidthRequest="290"
@@ -20,6 +23,7 @@
             
             <CollectionView.GroupHeaderTemplate>
                 <DataTemplate>
+                    
                     <Label Text="{Binding Name}"
                            Margin="0,0,0,0"
                            FontAttributes="Bold"
@@ -35,21 +39,52 @@
                            FontSize="19"/>
                 </DataTemplate>
             </CollectionView.GroupFooterTemplate>
-            <CollectionView.ItemTemplate >
+
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
 
-                        <Grid RowDefinitions="*,*"
+                    <Grid RowDefinitions="*,*"
                           ColumnDefinitions="250,200"
                           >
-                            <Label  Text="{Binding Invoicetype}"/>
-                            <Label Grid.Row="1" Margin="0,0,0,0" Text="{Binding Invoicebrief}"/>
-                            <Label Grid.Column="1" Grid.RowSpan="2" Text="{Binding Price}" VerticalOptions="Center"/>
-                        </Grid>
-                   
+                        <Label  Text="{Binding Invoicetype}" FontAttributes="Bold"/>
+                        <Label Grid.Row="1" Margin="0,0,0,0" Text="{Binding Invoicebrief}" />
+                        <Label Grid.Column="1" Grid.RowSpan="2" Text="{Binding Price}" VerticalOptions="Center"/>
+                    </Grid>
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        
-        </CollectionView>
+        </CollectionView>-->
+        <listview:SfListView x:Name="listView" ItemsSource="{Binding invoices}"                             
+                            IsStickyGroupHeader="True" ScrollBarVisibility="Never"
+                             GroupHeaderSize="40" >
+
+            <listview:SfListView.DataSource >
+                <data:DataSource LiveDataUpdateMode="AllowDataShaping">
+                    <data:DataSource.GroupDescriptors>
+                        <data:GroupDescriptor PropertyName="Date"/>
+                    </data:DataSource.GroupDescriptors>
+                </data:DataSource>                            
+            </listview:SfListView.DataSource>
+
+            <listview:SfListView.GroupHeaderTemplate>
+                <DataTemplate x:Name="GHeaderTemplate">                    
+                        <Label Text="{Binding Key}" FontAttributes="Bold" FontSize="18"/>
+                </DataTemplate>
+            </listview:SfListView.GroupHeaderTemplate>
+            
+            <listview:SfListView.ItemTemplate>
+                <DataTemplate x:Name="ItemTemplate">
+                    <Grid RowDefinitions="*,*"
+                          ColumnDefinitions="250,200" Margin="0,-0,0,0">
+                        <Label  Text="{Binding Invoicetype}" FontAttributes="Bold"/>
+                        <Label Grid.Row="1" Margin="0,0,0,0" Text="{Binding Invoicebrief}" />
+                        <Label Grid.Column="1" Grid.RowSpan="2" Text="{Binding Price}" VerticalOptions="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </listview:SfListView.ItemTemplate>
+
+
+        </listview:SfListView>
 
         <Button x:Name="btnadd"
                 Grid.Row="0" 
@@ -60,8 +95,8 @@
                 FontSize="30"
                 CornerRadius="60" 
                 Command="{Binding AddInvoiceCommand}"
-                Margin="0,270,0,0"/>
-       
+                Margin="0,550,0,0"/>
+
 
     </Grid>
 

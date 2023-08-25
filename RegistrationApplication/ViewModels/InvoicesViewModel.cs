@@ -14,184 +14,219 @@ namespace RegistrationApplication.ViewModels
 {
     
     public partial class InvoicesViewModel: ObservableObject
-    {
-        
-        public  ObservableCollection<InvoiceGroup> invoices { get; set; } = new ObservableCollection<InvoiceGroup>();
+    {   
+        private double val = -5;
+
+        public  ObservableCollection<Invoice> invoices { get; set; } = new ObservableCollection<Invoice>();
 
         public InvoicesViewModel()
         {
             //List of Invoices on 15 AUGUST 2023
-            invoices.Add(new InvoiceGroup("15 AUGUST 2023", new ObservableCollection<Invoice>
-        { new Invoice
-        {   InvoiceDate= DateOnly.FromDateTime(DateTime.Now),
-            Price=6000,
-            Invoicetype="Food&Beverages",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= DateOnly.FromDateTime(DateTime.Now),
-            Price=2000,
-            Invoicetype="Transportation",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today,
+                Price = 6000,
+                Invoicetype = "Food&Beverages",
+                Invoicebrief = "Lunch",
+                Date=$"{DateTime.Today.Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today,
+                Price = 2000,
+                Invoicetype = "Transportation",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.Month}"
+            });
+
+            invoices.Add(new Invoice
+            {
+                InvoiceDate = DateTime.Today,
+                Price = 60000,
+                Invoicetype = "Rent",
+                Invoicebrief = "Monthly",
+                Date = $"{DateTime.Today.Month}"
+            });
+
+            invoices.Add(new Invoice
         {
-            InvoiceDate = DateOnly.FromDateTime(DateTime.Now),
-            Price = 60000,
-            Invoicetype = "Rent",
-            Invoicebrief = "Monthly"
-        },
-        new Invoice
-        {
-            InvoiceDate = DateOnly.FromDateTime(DateTime.Now),
+            InvoiceDate = DateTime.Today,
             Price = 16000,
             Invoicetype = "Electricity",
-            Invoicebrief = "Monthly Payment"
-        }
-        }));
+            Invoicebrief = "Monthly Payment",
+            Date = $"{DateTime.Today.Month}"
+            });
 
             //List of Invoices on 14 AUGUST 2023
-            invoices.Add(new InvoiceGroup("14 AUGUST 2023", new ObservableCollection<Invoice>
-        { new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,14),
-            Price=6000,
-            Invoicetype="Food&Beverages",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,14),
-            Price=2000,
-            Invoicetype="Transportation",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,14),
-            Price=60000,
-            Invoicetype="Rent",
-            Invoicebrief="Monthly"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,14),
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-1),
+                Price = 6000,
+                Invoicetype = "Food&Beverages",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(-1).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-1),
+                Price = 2000,
+                Invoicetype = "Transportation",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(-1).Month}"
+            });
+
+            invoices.Add(new Invoice
+                        {
+                InvoiceDate = DateTime.Today.AddDays(-1),
+                Price = 60000,
+                Invoicetype = "Rent",
+                Invoicebrief = "Monthly",
+                Date = $"{DateTime.Today.AddDays(-1).Month}"
+            });
+
+            invoices.Add(new Invoice
+        {   InvoiceDate= DateTime.Today.AddDays(-1),
             Price=16000,
             Invoicetype="Electricity",
-            Invoicebrief="Monthly Payment"
-        }
-        }));
+            Invoicebrief="Monthly Payment",
+            Date = $"{DateTime.Today.AddDays(-1).Month}"
+            });
 
             //List of Invoices on 13 AUGUST 2023
-            invoices.Add(new InvoiceGroup("13 AUGUST 2023", new ObservableCollection<Invoice>
-        { new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=6000,
-            Invoicetype="Food&Beverages",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=2000,
-            Invoicetype="Transportation",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=60000,
-            Invoicetype="Rent",
-            Invoicebrief="Monthly"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-2),
+                Price = 6000,
+                Invoicetype = "Food&Beverages",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(-2).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-2),
+                Price = 2000,
+                Invoicetype = "Transportation",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(-2).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-2),
+                Price = 60000,
+                Invoicetype = "Rent",
+                Invoicebrief = "Monthly",
+                Date = $"{DateTime.Today.AddDays(-2).Month}"
+            });
+
+            invoices.Add(new Invoice
+        {   InvoiceDate= DateTime.Today.AddDays(-2),
             Price=16000,
             Invoicetype="Electricity",
-            Invoicebrief="Monthly Payment"
-        }
-        }));
+            Invoicebrief="Monthly Payment",
+            Date = $"{DateTime.Today.AddDays(-2).Month}"
+            });
 
             //List of Invoices on 13 AUGUST 2023
-            invoices.Add(new InvoiceGroup("12 AUGUST 2023", new ObservableCollection<Invoice>
-        { new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=6000,
-            Invoicetype="Food&Beverages",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=2000,
-            Invoicetype="Transportation",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=60000,
-            Invoicetype="Rent",
-            Invoicebrief="Monthly"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-3),
+                Price = 6000,
+                Invoicetype = "Food&Beverages",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(-3).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-3),
+                Price = 2000,
+                Invoicetype = "Transportation",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(-3).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-3),
+                Price = 60000,
+                Invoicetype = "Rent",
+                Invoicebrief = "Monthly",
+                Date = $"{DateTime.Today.AddDays(-3).Month}"
+            });
+
+            invoices.Add(new Invoice
+        {   InvoiceDate= DateTime.Today.AddDays(-3),
             Price=16000,
             Invoicetype="Electricity",
-            Invoicebrief="Monthly Payment"
-        }
-        }));
+            Invoicebrief="Monthly Payment",
+                Date = $"{DateTime.Today.AddDays(-3).Month}"
+            });
 
             //List of Invoices on 13 AUGUST 2023
-            invoices.Add(new InvoiceGroup("11 AUGUST 2023", new ObservableCollection<Invoice>
-        { new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=6000,
-            Invoicetype="Food&Beverages",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=2000,
-            Invoicetype="Transportation",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=60000,
-            Invoicetype="Rent",
-            Invoicebrief="Monthly"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-4),
+                Price = 6000,
+                Invoicetype = "Food&Beverages",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(-4).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-4),
+                Price = 2000,
+                Invoicetype = "Transportation",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(-4).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(-4),
+                Price = 60000,
+                Invoicetype = "Rent",
+                Invoicebrief = "Monthly",
+                Date = $"{DateTime.Today.AddDays(-4).Month}"
+            });
+
+            invoices.Add(new Invoice
+           {InvoiceDate= DateTime.Today.AddDays(-4),
             Price=16000,
             Invoicetype="Electricity",
-            Invoicebrief="Monthly Payment"
-        }
-        }));
+            Invoicebrief="Monthly Payment",
+            Date = $"{DateTime.Today.AddDays(-4).Month}"
+            });
+            
         }
 
         [RelayCommand]
         public void AddInvoice()
-        {
-            invoices.Add(new InvoiceGroup("11 AUGUST 2023", new ObservableCollection<Invoice>
-        { new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=6000,
-            Invoicetype="Food&Beverages",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=2000,
-            Invoicetype="Transportation",
-            Invoicebrief="Lunch"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
-            Price=60000,
-            Invoicetype="Rent",
-            Invoicebrief="Monthly"
-        },
-        new Invoice
-        {   InvoiceDate= new DateOnly(2023,8,13),
+        {            
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(val),
+                Price = 6000,
+                Invoicetype = "Food&Beverages",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(val).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(val),
+                Price = 2000,
+                Invoicetype = "Transportation",
+                Invoicebrief = "Lunch",
+                Date = $"{DateTime.Today.AddDays(val).Month}"
+            });
+
+            invoices.Add(new Invoice
+            { InvoiceDate = DateTime.Today.AddDays(val),
+                Price = 60000,
+                Invoicetype = "Rent",
+                Invoicebrief = "Monthly",
+                Date = $"{DateTime.Today.AddDays(val).Month}"
+            });
+
+            invoices.Add(new Invoice
+           {InvoiceDate= DateTime.Today.AddDays(val),
             Price=16000,
             Invoicetype="Electricity",
-            Invoicebrief="Monthly Payment"
-        }
-        }));
+            Invoicebrief="Monthly Payment",
+            Date = $"{DateTime.Today.AddDays(val).Month}"
+            });
+            --val;
+            
         }
 
 

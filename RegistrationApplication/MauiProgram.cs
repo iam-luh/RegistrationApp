@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-
+using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace RegistrationApplication;
 
@@ -16,7 +16,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-        
+        builder.ConfigureSyncfusionCore();
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
